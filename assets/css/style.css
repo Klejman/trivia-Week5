@@ -1,0 +1,146 @@
+
+
+body {
+    max-width: 960px;
+    width: 100%;
+    height: auto;
+    background-image: url(../images/gamePlayBg.jpeg);
+    opacity: 0.85;
+      filter: alpha(opacity= 85); /* For IE8 and earlier */
+      height: auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+	font-family: 'Playfair Display', serif;
+}
+
+img.center {
+    width: 20%;
+    padding-left: 5%;
+    height: auto;
+/*    float:right;*/
+    display: block;
+    margin: 0 auto;
+}
+
+.center{
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 2%;
+    color: #fff;
+    text-shadow:
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    clear: right;
+}
+
+button.startButton {
+    margin-left: 32%;
+    padding: 10px;
+    clear: both;
+    background: #000;
+    color: #fff;
+    border-radius: 25px;
+    text-shadow:
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.question {
+    clear:both;
+    line-height: 1.2em;
+    text-align: center;
+    margin: 0 25%;
+    width: 50%;
+    color:#fff;
+    height: 100px;
+    text-shadow:
+    -1px -1px 0 #800000,  
+    1px -1px 0 #800000,
+    -1px 1px 0 #800000,
+    1px 1px 0 #800000;
+    background: #244C06;
+    }
+        
+
+button{
+    margin-bottom: 2px;
+}
+
+
+#button-a,
+#button-b,
+#button-c,
+#button-d {
+    width: 50%;
+    background-color:#244C06;
+    font-size: 12px;
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+    margin: 0.3% 25%;
+    color: #fff;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    float: left;
+}
+
+button.answerchoice {
+    display: none;
+    margin-bottom: 2px;
+}
+
+#button-a:hover,
+#button-b:hover,
+#button-c:hover,
+#button-d:hover {
+    background-color: #808000;
+}
+
+/*.question{
+    margin: none;
+    text-align: center;
+    overflow: none;
+    width: 350px;
+    color: #fff;
+    text-shadow:
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}*/
+
+/*tried to add police star image but unable to do so*/
+/*#star-six {
+    width:0%;
+    margin: auto;
+    margin-top: 28%;
+    height: 0;
+    border-left: 130px solid transparent;
+    border-right: 150px solid transparent;
+    border-bottom: 250px solid #FFD700;
+    color: #fff;
+    position: relative;
+}
+#star-six:after {
+    width: 0;
+    z-index: -1;
+    margin:auto;
+    height: 0;
+    border-left: 135px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 250px solid #FFD700;
+    position: absolute;
+    content: "";
+    top: 100px;
+    left: -130px;
+}
+*/
