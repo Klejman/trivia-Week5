@@ -21,6 +21,7 @@ $(document).ready(function() {
 			if (countdownTimer.time >= 0) {
 				$('.timer').html('<h3>' + countdownTimer.time + ' seconds remaining</h3>');
 			}
+
 			else {
 				index++;
 				answerWrong();
@@ -35,15 +36,31 @@ $(document).ready(function() {
 		}
 	};
 
+var callIt = function() {
+	$(".question").text('');
+	$("#button-a").text('');
+	$("#button-b").text('');
+	$("#button-c").text('');
+	$("#button-d").text('');
+	index++;
+	countdownTimer.reset();
+	if (index < myQuestions.length) {
+		loadQuestion(index);
+	} else {
+		$(".answerchoice").hide();
+		showScore();
+	} 
+}
+
 
 	// set the counters
 	var correct = 0;
 	var wrong = 0;
-	var totalScore = correct - totalQuestions;
-	var totalQuestions = 10;
+	// var totalScore = correct - totalQuestions;
+	// var totalQuestions = 10;
 
 	var question1 = {
-	    question1 : "Who is the best selling mystery writter of all time?",
+	    question : "Who is the best selling mystery writter of all time?",
 	    possibleAnswers:[
 	    "a: James Patterson",
 	    "b: Steven King",
@@ -54,7 +71,7 @@ $(document).ready(function() {
 	}
 
 	var question2 = {
-		question2: "Who wrote The Pit and the Pendulum?",
+		question: "Who wrote The Pit and the Pendulum?",
 		possibleAnswers: [
 		"a: A Short Story in the Decemember 1982 issue of Readers Digest",
 		"b: The board game",
@@ -65,7 +82,7 @@ $(document).ready(function() {
 	}
 
 	var question3= {
-		question3: "Which of the following authors is not classified as a mystery writter?",
+		question: "Which of the following authors is not classified as a mystery writter?",
 		possibleAnswers: [
 		"a: P.D James",
 		"b: Raymond Chandler",
@@ -76,7 +93,7 @@ $(document).ready(function() {
 	}
 
 	 var question4 = {
-	 	question4: "What famous fictional dectective said, It is my business to know what other people don\'t know?",
+	 	question: "What famous fictional dectective said, It is my business to know what other people don\'t know?",
 		possibleAnswers:[
 		"a: Sherlock Holmes",
 		"b: Inspector Clousseau",
@@ -87,7 +104,7 @@ $(document).ready(function() {
 	}
 
 	var question5 = {
-		question5: "What famous mystery author said, One of the luckiest things that can happen to you in life is, I think, is to have a happy childhood",
+		question: "What famous mystery author said, One of the luckiest things that can happen to you in life is, I think, is to have a happy childhood",
 		possibleAnswers:[
 		"a: J.K Rowling",
 		"b: P.D James",
@@ -98,7 +115,7 @@ $(document).ready(function() {
 	}
 
 	var question6 = {
-		question6: "What is the earliest known crime fiction?",
+		question: "What is the earliest known crime fiction?",
 		possibleAnswers:[
 		"a: Stories in the life of a Bow Street officer by: Thomas Skinner Sturr",
 		"b: The Rector of Veilbye by: Steen Steensen Blicher",
@@ -109,7 +126,7 @@ $(document).ready(function() {
 	}
 
 	var question7 = {
-		question7: "Which is NOT considered a subgenre of detective fiction?",
+		question: "Which is NOT considered a subgenre of detective fiction?",
 		possibleAnswers:[
 		"a: cozy mystery",
 		"b: locked room mystery",
@@ -120,7 +137,7 @@ $(document).ready(function() {
 	}
 
 	var question8 = {
-		question8: "Who said, Give me a decent bottle of poison and I will construct the perfect crime?",
+		question: "Who said, Give me a decent bottle of poison and I will construct the perfect crime?",
 		possibleAnswers:[
 		"a: P.D James",
 		"b: Raymond Chandler",
@@ -131,7 +148,7 @@ $(document).ready(function() {
 	}
 
 	var question9 = {
-		question9: "Which mystery writter wrote scripts in Hollywood, once working with Hitchcock?",
+		question: "Which mystery writter wrote scripts in Hollywood, once working with Hitchcock?",
 		possibleAnswers: [
 		"a: James Patterson",
 		"b: Raymond Chandler",
@@ -143,7 +160,7 @@ $(document).ready(function() {
 	}
 
 	var question10 = {
-		question10: "Who wrote The Pit and the Pendulum?",
+		question: "Who wrote The Pit and the Pendulum?",
 		possibleAnswers: [
 		"a: James Patterson",
 		"b: Raymond Chandler",
@@ -157,11 +174,13 @@ $(document).ready(function() {
 	let myQuestions = [question1, question2, question3, question4, question5,
 	question6, question7, question8, question9, question10];
 
+	// var questionList = question1.question;
+
 	//on click event listener that assigns the buttons
 	function loadQuestion(questionSelection) {
 
 		countdownTimer.reset();
-			$(".question").html("<h3>" + myQuestions[questionSelection].question + "</h3>");
+			$(".question").text(myQuestions[questionSelection].question).show();
 			$("#button-a").text(myQuestions[questionSelection].possibleAnswers[0]).show();
 			$("#button-b").text(myQuestions[questionSelection].possibleAnswers[1]).show();
 			$("#button-c").text(myQuestions[questionSelection].possibleAnswers[2]).show();
@@ -180,7 +199,7 @@ $(document).ready(function() {
 	function getAnswer() {
 
 	//  nextQuestion();
-		$('.answerchoice').on('click', function() {
+		$('.answerchoice').on('click', function(){
 		  console.log('alert', index);
 			index++;
 			console.log('click', index);
@@ -229,39 +248,34 @@ $(document).ready(function() {
 		 }
 		 if ((userAnswer == 'a') && myQuestions[index].pAValues[0] == true) {
 		 	answerCorrect();
+		 	callIt();
 		 } else if (userAnswer == 'a') {
 		 	answerWrong();
+		 	callIt();
 		 }
 		 if ((userAnswer == 'b') && myQuestions[index].pAValues[1] == true) {
 		 	answerCorrect();
+		 	callIt();
 		 } else if (userAnswer == 'b') {
 		 	answerWrong();
+		 	callIt();
 		 }
 		if ((userAnswer == 'c') && myQuestions[index].pAValues[2] == true) {
 		 	answerCorrect();
+		 	callIt();
 		 } else if (userAnswer == 'c') {
 		 	answerWrong();
+		 	callIt();
 		 }
 		if ((userAnswer == 'd') && myQuestions[index].pAValues[3] == true) {
 		 	answerCorrect();
+		 	callIt();
 		 } else if (userAnswer == 'd') {
 		 	answerWrong();
+		 	callIt();
 		 }
 
 
-
-		 $(".question").text('');
-		 $("#button-a").text('');
-		 $("#button-b").text('');
-		 $("#button-c").text('');
-		 $("#button-d").text('');
-		 index++;
-		 if (index < correctAnswer.length) {
-		 	loadQuestion(index);
-		 } else {
-		 	$(".answerchoice").hide();
-		 	showScore();
-		 }
 	});
 
 

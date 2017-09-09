@@ -3,6 +3,8 @@
 body {
     max-width: 960px;
     width: 100%;
+    margin-right: auto;
+    margin-left: auto;
     height: auto;
     background-image: url(../images/gamePlayBg.jpeg);
     opacity: 0.85;
