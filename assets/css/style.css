@@ -58,6 +58,7 @@ button.startButton {
     line-height: 1.2em;
     text-align: center;
     margin: 0 25%;
+    padding-top: 10%;
     width: 50%;
     color:#fff;
     height: 100px;
@@ -69,7 +70,9 @@ button.startButton {
     background: #244C06;
     }
         
-
+div.question h3{
+    margin-top: 12px;
+}
 button{
     margin-bottom: 2px;
 }
