@@ -71,14 +71,14 @@ var callIt = function() {
 	}
 
 	var question2 = {
-		question: "Who wrote The Pit and the Pendulum?",
+		question: "What was the first detective film?",
 		possibleAnswers: [
-		"a: A Short Story in the Decemember 1982 issue of Readers Digest",
-		"b: The board game",
-		"c: Episode 109 of the Twilight Zone",
+		"a: The Hound of the Baskervilles",
+		"b: Sherlock Holmes Baffled",
+		"c: The Sign of Four",
 		"d: None of the Above"],
 		pAValues :[false,true,false,false],
-		correctAnswer : "b: The board game",
+		correctAnswer : "b: Sherlock Holmes Baffled, a short Mutoscope reel by Arthur Marvin",
 	}
 
 	var question3= {
