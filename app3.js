@@ -171,7 +171,7 @@ var callIt = function() {
 	}
 
 	//set questions to a locally scoped array
-	let myQuestions = [question1, question2, question3, question4, question5,
+	var myQuestions = [question1, question2, question3, question4, question5,
 	question6, question7, question8, question9, question10];
 
 	// var questionList = question1.question;
@@ -212,6 +212,7 @@ var callIt = function() {
 		})
 	}
 
+
 	function answerCorrect() {
 		correct++;
 		alert("Correct!");
@@ -225,13 +226,15 @@ var callIt = function() {
 	}
 
 	function showScore() {
-		$('.question').empty();
-		$('.question').append("<h2><p>" + correct + " correct</p></h2>");
-		$('.question').append("<h2><p>" + wrong + " incorrect</p></h2>");
-		countdownTimer.stop();
-		$('.timer').empty();
+    $('.question').empty();
+    $('.question').append("<h2><p>" + correct + " correct</p></h2>");
+    $('.question').append("<h2><p>" + wrong + " incorrect</p></h2>");
+    countdownTimer.stop();
+    $('button').css("display", "none");
+    $('.timer').hide();
+  }
 
-	}
+
 
 
 	setup();

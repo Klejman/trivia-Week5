@@ -62,6 +62,7 @@ button.startButton {
 
 .question {
     clear:both;
+    font-size: 20px;
     font: 25px;
     line-height: 1.2em;
     text-align: center;
@@ -93,7 +94,7 @@ button{
 #button-d {
     width: 50%;
     background-color:#244C06;
-    font-size: 12px;
+    font-size: 16px;
     cursor: pointer;
     display: inline-block;
     height: 40px;
